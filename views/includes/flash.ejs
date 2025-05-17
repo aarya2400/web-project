@@ -1,0 +1,26 @@
+<!--condition when to display this alert-->
+<% if(success && success.length){ %>
+        <div class="alert alert-success alert-dismissible fade show col-6 offset-3"
+         role="alert">
+            <%=success%> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert"
+        aria-label="Close"></button></div>
+<% } %> 
+    <!--this is flash success variable defined in middleware
+    in res.locals in app.js-->
+
+
+<!--success is an array. if(succcess) is the condition we gave says that success array exists,
+only values in it are absent, before creating a new listing. 
+so it outputs [] empty array. but we want it only when we create new listing
+to add proper condition that success values must be also be present, we
+add success.length>0  -->
+
+
+<% if(error && error.length){ %>
+        <div class="alert alert-danger alert-dismissible fade show col-6 offset-3"
+         role="alert">
+            <%=error%> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert"
+        aria-label="Close"></button></div>
+<% } %> 
